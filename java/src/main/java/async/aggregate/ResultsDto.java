@@ -1,4 +1,4 @@
-package aggregate;
+package async.aggregate;
 
 import lombok.Builder;
 import lombok.Value;

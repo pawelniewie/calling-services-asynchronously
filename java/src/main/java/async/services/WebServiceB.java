@@ -1,16 +1,7 @@
-package services;
+package async.services;
 
 import java.io.IOException;
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Currency;
-import java.util.Date;
-import java.util.List;
 import java.util.Random;
-import java.util.UUID;
-
-import org.joda.time.Duration;
-import org.joda.time.LocalDateTime;
 
 /**
  * A fake web service, that represents a flight supplier. Keep in mind that YOU CAN'T MODIFY this class
@@ -18,19 +9,19 @@ import org.joda.time.LocalDateTime;
  */
 public class WebServiceB {
 
-    public String getConnections() throws IOException {
+    public String process() throws IOException {
         if (Boolean.valueOf(System.getProperty("com.pawelniewiadomski.serviceBIsDown", "false"))) {
             throw new java.net.ConnectException("Connection failed!");
         }
 
         final Random random = new Random();
-
+        final int timeToSleep = random.nextInt(10) * 1000;
         try {
-            Thread.sleep(random.nextInt(10) * 1000);
+            Thread.sleep(timeToSleep);
         } catch (InterruptedException e) {
         }
 
-        return "";
+        return Integer.toString(timeToSleep);
     }
 
 }

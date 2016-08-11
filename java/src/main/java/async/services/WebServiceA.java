@@ -1,4 +1,4 @@
-package services;
+package async.services;
 
 import java.io.IOException;
 import java.util.Random;
@@ -13,11 +13,12 @@ public class WebServiceA {
         }
 
         final Random random = new Random();
-
+        final int timeToSleep = random.nextInt(10) * 1000;
         try {
-            Thread.sleep(random.nextInt(10)*1000);
-        } catch (InterruptedException e) {}
+            Thread.sleep(timeToSleep);
+        } catch (InterruptedException e) {
+        }
 
-        return "";
+        return Integer.toString(timeToSleep);
     }
 }

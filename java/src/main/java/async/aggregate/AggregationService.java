@@ -1,6 +1,6 @@
-package aggregate;
+package async.aggregate;
 
-import clients.ServiceClient;
+import async.clients.ServiceClient;
 import io.atlassian.fugue.Either;
 import io.atlassian.fugue.Eithers;
 import lombok.extern.slf4j.Slf4j;
@@ -18,7 +18,7 @@ import static java.util.stream.Collectors.toList;
 
 @Slf4j
 @Service
-public class ConnectionsService implements DisposableBean, InitializingBean {
+public class AggregationService implements DisposableBean, InitializingBean {
     private static final int MAX_WAIT_TIME = 5;
 
     @Autowired

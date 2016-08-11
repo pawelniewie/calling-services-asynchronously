@@ -1,4 +1,4 @@
-package clients;
+package async.clients;
 
 import io.atlassian.fugue.Either;
 import org.hamcrest.core.IsInstanceOf;

@@ -80,7 +80,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>Main</mainClass>
+                    <mainClass>async.Main</mainClass>
                     <!--
                     <arguments>
                       <argument>foo</argument>

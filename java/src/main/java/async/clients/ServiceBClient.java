@@ -1,8 +1,8 @@
-package clients;
+package async.clients;
 
 import io.atlassian.fugue.Either;
 import org.springframework.stereotype.Service;
-import services.WebServiceB;
+import async.services.WebServiceB;
 
 import java.io.IOException;
 
@@ -12,7 +12,7 @@ public class ServiceBClient implements ServiceClient {
     public Either<Exception, String> getData() {
         final WebServiceB supplierWS = new WebServiceB();
         try {
-            return Either.right(supplierWS.getConnections());
+            return Either.right(supplierWS.process());
         } catch (IOException e) {
             return Either.left(e);
         }
