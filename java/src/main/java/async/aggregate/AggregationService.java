@@ -26,7 +26,7 @@ public class AggregationService implements DisposableBean, InitializingBean {
 
     private ThreadPoolExecutor executor;
 
-    public ResultsDto getConnections() throws InterruptedException {
+    public ResultsDto getResults() throws InterruptedException {
         List<Future<Either<Exception, String>>> results = executor.invokeAll(serviceClients
                 .stream()
                 .map(serviceClient -> {

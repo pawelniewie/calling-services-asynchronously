@@ -15,6 +15,6 @@ public class ResultsController {
 
     @RequestMapping(method = GET)
     public ResultsDto getResults() throws InterruptedException {
-        return aggregationService.getConnections();
+        return aggregationService.getResults();
     }
 }
